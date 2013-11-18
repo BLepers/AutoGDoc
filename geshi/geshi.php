@@ -2409,7 +2409,6 @@ class GeSHi {
         $is_string_starter = array();
         if ($this->lexic_permissions['STRINGS']) {
            foreach ($this->language_data['QUOTEMARKS'] as $quotemark) {
-              echo $quotemark;
                 if (!isset($is_string_starter[$quotemark[0]])) {
                     $is_string_starter[$quotemark[0]] = (string)$quotemark;
                 } elseif (is_string($is_string_starter[$quotemark[0]])) {
