@@ -6,7 +6,7 @@ include_once 'geshi/geshi.php';
 $source = file_get_contents('test.cpp');
 $language = 'cpp';
 $geshi = new GeSHi($source, $language);
-echo '<span style="color:#100">'.$geshi->parse_code().'</span>';
+echo '<span style="color:#100;font-family:monospace;">'.$geshi->parse_code().'</span>';
 
 ?>
 

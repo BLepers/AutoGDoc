@@ -60,11 +60,15 @@ function writeText(t, url) {
    
     setTimeout(function() {
         element = $('span[aria-label="Ctrl+A."]').parent().parent()[0];
+        if(!element)
+            element = $('span[aria-label="shortcut Ctrl+A."]').parent().parent()[0];
         dispatchMouseEvent(element, 'mousedown', true, true);
         dispatchMouseEvent(element, 'mouseup', true, true);
        
    
         element = $('span[aria-label="Ctrl+V."]').parent().parent()[0];
+        if(!element)
+            element = $('span[aria-label="shortcut Ctrl+V."]').parent().parent()[0];
         dispatchMouseEvent(element, 'mousedown', true, true);
         dispatchMouseEvent(element, 'mouseup', true, true);
        
