@@ -18,19 +18,6 @@ var dispatchMouseEvent = function(target, var_args) {
   target.dispatchEvent(e);
 };
 
-var replaceText = function() {
-    var element = $('span[aria-label="Ctrl+A."]').parent().parent()[0];
-    dispatchMouseEvent(element, 'mousedown', true, true);
-    dispatchMouseEvent(element, 'mouseup', true, true);
-   
-    var element = $('span[aria-label="Ctrl+V."]').parent().parent()[0];
-    dispatchMouseEvent(element, 'mousedown', true, true);
-    dispatchMouseEvent(element, 'mouseup', true, true);
-   
-    setTimeout(replaceText, 1000);
-}
-
-// DOM 3 Events
 var dispatchKeyboardEvent = function(target, initKeyboradEvent_args) {
   var e = document.createEvent("KeyboardEvents");
   e.initKeyboardEvent.apply(e, Array.prototype.slice.call(arguments, 1));
@@ -46,7 +33,6 @@ var dispatchSimpleEvent = function(target, type, canBubble, cancelable) {
   e.initEvent.apply(e, Array.prototype.slice.call(arguments, 1));
   target.dispatchEvent(e);
 };
-
 
 
 $('#clearFormattingButton').parent().append(
